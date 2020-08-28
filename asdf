@@ -1,0 +1,243 @@
+/*
+var firstName = 'John';
+console.log(firstName);
+
+var lastName = 'Smith';
+var age = 29;
+
+var fullAge = true;
+console.log(fullAge);
+
+var year = 3;
+*/
+
+/*
+var firstName = 'John';
+var age = 29;
+console.log(firstName + ' ' + age);
+
+var lastName = prompt('what is my name?');
+console.log(lastName);
+*/
+
+/*
+var elijahAge, joeAge;
+elijahAge = 29;
+joeAge = 24;
+
+var elijahOlder = elijahAge > joeAge;
+console.log('elijah is ' + elijahAge + ' years old. ' + 'Is elijah older than joe? ' + elijahOlder);
+*/
+
+/*
+var massJohn, massMark, heightJohn, heightMark;
+    massJohn = 100; // in kg
+    massMark = 90; // in kg
+    heightJohn = 2; // in m
+    heightMark = 2.1; // in m
+var bmiJohn, bmiMark;
+    bmiJohn = massJohn / (heightJohn**2);
+    bmiMark = massMark / heightMark**2;
+
+var bmiJohnGreater = bmiJohn > bmiMark;
+
+console.log('John\'s bmi is ' + bmiJohn + '. Mark\'s bmi is ' + bmiMark + '. Is John\'s bmi greater than Mark\'s? ' + bmiJohnGreater);
+*/
+
+
+/*****************
+Coding Challenge 2 
+
+var avgJohn, avgMike, avgMary; 
+avgJohn = 100 //(89+120+103)/3;
+avgMike = 110 // (116+94+123)/3;
+avgMary = 1100 //(97+134+105)/3;
+console.log('John\'s average is ' + avgJohn + ',  Mike\'s average is ' + avgMike+ ',  Mary\'s average is ' + avgMary);
+
+
+if (avgJohn > avgMike && avgJohn > avgMary){
+    console.log('John\'s average is highest.');
+}
+    else if (avgMary > avgMike && avgMary > avgJohn){
+    console.log('Mary\'s average is highest.');
+}
+    else if (avgJohn === avgMike && avgJohn === avgMary){
+        console.log('It\'s a tie.');
+}
+    else {
+        console.log('Mike\'s average is highest');
+}
+
+******************/
+    
+/*****************
+
+Function expressions
+var whatDoYouDo = function(job, firstName) {
+    switch(job) {
+        case 'teacher':
+            return firstName + ' teaches kids to code';
+        case 'driver':
+            return firstName + ' drives an uber';
+        case 'designer':
+            return firstName + ' designs websites';
+        default:
+            return firstName + ' does something else.'
+    }
+}
+
+console.log(whatDoYouDo('teacher', 'Beenter'));
+console.log(whatDoYouDo('driver', 'Peanut'));
+console.log(whatDoYouDo('designer', 'Deenti'));
+console.log(whatDoYouDo('digger', 'Nick'));
+
+*****************/
+
+/*****************
+
+//Arrays
+
+var names = ['Beenter', 'Deenter', 'Peanut'];
+//can also be written like below, but less common.
+var years = new Array(1990, 1969, 1948);
+
+console.log(names[0]);
+console.log(names.length);
+
+names[0] = 'schnuckums';
+console.log(names);
+
+*****************/
+
+// so arrays are like lists in python? 
+
+/*****************
+
+var beenter = ['beenter', 'charbel', 2018, 'dog', false];
+// here's how to append the end of a array
+beenter.push('teep');
+console.log(beenter);
+// here's how to append to the beginning of an array
+beenter.unshift('smol');
+console.log(beenter);
+// here's how to remove an item from end of an array
+beenter.pop();
+console.log(beenter);
+// here's how to remove an item from beginning of an array
+beenter.shift();
+console.log(beenter);
+// to find position of element in array...
+console.log(beenter.indexOf(2018));
+
+*****************/
+    
+/*****************
+// Coding challenge 3
+
+function tipCalc(bill){
+    var percentage;
+    if (bill < 50) {
+        percentage = 0.2;
+    } else if (bill >= 50 && bill <200) {
+        percentage = 0.15;
+    } else {
+        percentage = 0.1;
+    }
+    return (bill*percentage);
+}
+
+var tips = [];
+tips.push(tipCalc(124));
+tips.push(tipCalc(48));
+tips.push(tipCalc(268));
+console.log(tips);
+var total = [124+tipCalc(124), 48+tipCalc(48), 268+tipCalc(268)];
+console.log(total);
+
+
+    
+// Objects and Properties
+
+// Object literal syntax
+var beenter = {
+    firstName: 'Beenter',
+    lastName: 'Charbel',
+    birthYear: 2018,
+    job: 'Doggler'
+};
+
+console.log(beenter);
+console.log(beenter['firstName']);
+console.log(beenter.birthYear);
+
+// New Object Syntax
+var deenti = new Object();
+    deenti.firstName = 'Deenti';
+    deenti['lastName'] = 'Charbel'
+console.log(deenti);
+
+
+
+// Objects and Methods
+
+var beenter = {
+    firstName: 'Beenter',
+    lastName: 'Charbel',
+    birthYear: 2018,
+    job: 'Doggler',
+    calcAge: function() {
+        //return 2020 - this.birthYear;
+        //the following is better than the above
+        this.age = 2020 - this.birthYear;
+    }
+};
+beenter.calcAge();
+console.log(beenter);
+
+
+*****************/
+
+// Coding Challenge 4
+/*****************
+var massJohn, massMark, heightJohn, heightMark;
+    massJohn = 100; // in kg
+    massMark = 90; // in kg
+    heightJohn = 2; // in m
+    heightMark = 2.1; // in m
+var bmiJohn, bmiMark;
+    bmiJohn = massJohn / (heightJohn**2);
+    bmiMark = massMark / heightMark**2;
+*****************/
+
+var john = {
+    fullName: 'John Smith',
+    mass: 92, //in kg
+    height: 1.95, // in m
+    calcBMI: function(){
+        this.bmi = (this.mass) / (this.height**2);
+        return this.bmi;
+    }
+}
+var mark = {
+    fullName: 'Mark Diggerson',
+    mass: 78, //in kg
+    height: 1.69, // in m
+    calcBMI: function(){
+        this.bmi = (this.mass) / (this.height**2);
+        return this.bmi;
+    }
+    
+}
+mark.calcBMI();
+john.calcBMI();
+    
+console.log(john, mark);
+
+if (john.bmi > mark.bmi){
+    console.log(john.fullName + ' has a higher bmi of ' + john.bmi);
+} else if (mark.bmi > john.bmi){
+    console.log(mark.fullName + ' has a higher bmi of ' + mark.bmi);
+} else console.log('They have equal bmi of ' + john.bmi);
+
+
+
